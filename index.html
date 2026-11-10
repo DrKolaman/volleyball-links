@@ -127,7 +127,7 @@ GROUPS.forEach(g=>{
   box.appendChild(s);
 });
 
-function pageBase(){ return location.href.split("#")[0]; }
+function pageBase(){ return location.origin + location.pathname; }
 function route(){
   const h=location.hash.slice(1); const valid=GROUPS.some(g=>g.id===h);
   GROUPS.forEach(g=>{document.getElementById("g-"+g.id).hidden = valid && g.id!==h;});
